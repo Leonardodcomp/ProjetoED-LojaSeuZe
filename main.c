@@ -217,7 +217,7 @@ int main() {
     // Seu Zé não curte frontend e fez um negocinho no terminal mesmo com a função do
     do {
         printf("\n========================================\n");
-        printf("   SISTEMA DE HARDWARE - LEONARDO ENG   \n");
+        printf("   SISTEMA DE HARDWARE - LOJA DO SEU ZÉ   \n");
         printf("========================================\n");
         printf("1. [LISTA] Adicionar Componente ao Estoque\n");
         printf("2. [LISTA] Listar Estoque\n");
