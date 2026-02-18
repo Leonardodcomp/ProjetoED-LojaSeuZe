@@ -23,3 +23,6 @@ OBS:
 2- Para rodar o programa bastar utilizar o comando abaixo no terminal
     make
 
+2.1 - Lembrando que se o SO utilizado for o windows, precisa chamar o MinGW antes:
+
+    mingw32-make
