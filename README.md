@@ -21,6 +21,7 @@ OBS:
 1- Em todos esses conceitos utilizamos na implementação os conceitos de PONTEIROS E VARIÁVEIS DINÂMICAS.
 
 2- Para rodar o programa bastar utilizar o comando abaixo no terminal
+
     make
 
 2.1 - Lembrando que se o SO utilizado for o windows, precisa chamar o MinGW antes:
