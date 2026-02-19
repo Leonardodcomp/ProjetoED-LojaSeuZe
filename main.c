@@ -62,13 +62,13 @@ NoLista* adicionar_produto(NoLista* lista, int id, char* nome, char* cat, float 
 
     // Criação da variável dinâmica:
 
-    NoLista* novo = (NoLista*) malloc(sizeof(NoLista));
-    if(novo == NULL) {
+    NoLista* novo = (NoLista*) malloc(sizeof(NoLista)); // O malloc reserva um espaço na memória do computador exatamente do tamanho de um NoLista. Sem isso, o produto sumiria assim que a função terminasse.
+    if(novo == NULL) { // Verifica se o computador conseguiu dar a memória. Se o malloc falhar, ele avisa o erro.
         printf("ERRO: Falha na alocacao de memoria!\n");
         return lista;
     }
-    novo->dado.id = id;
-    strcpy(novo->dado.nome, nome);
+    novo->dado.id = id; // Em C, quando usamos o símbolo ->, estamos dizendo ao computador: "Vá até o endereço de memória guardado neste ponteiro e acesse um campo específico lá dentro"
+    strcpy(novo->dado.nome, nome); // Em C, não podemos simplesmente usar um sinal de igual (=) para atribuir um texto a um array de caracteres (string) já criado. Precisamos "copiar" o texto letra por letra. É isso que o strcpy faz
     strcpy(novo->dado.categoria, cat);
     novo->dado.preco = preco;
     
@@ -78,17 +78,17 @@ NoLista* adicionar_produto(NoLista* lista, int id, char* nome, char* cat, float 
     return novo;
 }
 
-void listar_estoque(NoLista* lista) {
+void listar_estoque(NoLista* lista) { // O objetivo principal dessa função é percorrer a lista anterior
     printf("\n--- ESTOQUE ATUAL (LISTA) ---\n");
-    if(lista == NULL) {
+    if(lista == NULL) { // Verifica se a lista não está vazia como contenção
         printf("Estoque vazio.\n");
         return;
     }
     NoLista* aux = lista;
-    while(aux != NULL) {
+    while(aux != NULL) { // Sendo a condição diferente de vazio, o loop continua até terminarmos de percorrer a lista
         printf("ID: %d | Hardware: %-15s | Tipo: %-10s | R$ %.2f\n", 
-               aux->dado.id, aux->dado.nome, aux->dado.categoria, aux->dado.preco);
-        aux = aux->prox;
+               aux->dado.id, aux->dado.nome, aux->dado.categoria, aux->dado.preco); //  Aqui ocorre a exibição dos conteúdos apontados pelo ponteiro
+        aux = aux->prox; 
     }
 }
 
